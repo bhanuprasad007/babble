@@ -1,0 +1,21 @@
+package app.chat.babble.model;
+
+public enum UserPermission {
+    READ_MESSAGE,
+    SEND_MESSAGE,
+    DELETE_MESSAGE,
+    CREATE_CHAT_ROOM,
+    DELETE_CHAT_ROOM,
+    KICK_USER,
+    BAN_USER,
+    EDIT_USER_ROLE,
+    VIEW_USER_DETAILS,
+    VIEW_LOGS,
+    DELETE_OWN_MESSAGE,
+    JOIN_CHAT_ROOM,
+    LEAVE_CHAT_ROOM,
+    EDIT_PROFILE,
+    VIEW_OTHER_PROFILES,
+    VIEW_ALL_USERS,
+    DELETE_USER
+}
