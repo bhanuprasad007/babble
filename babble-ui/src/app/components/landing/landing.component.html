@@ -1,0 +1,39 @@
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Babble Chat</h1>
+        <p>Connect with friends and chat securely.</p>
+        <div class="hero-button-container">
+            <button mat-raised-button color="primary" routerLink="/login">Login</button>
+            <button mat-raised-button color="primary" routerLink="/signup">Signup</button>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+    <h2>Key Features</h2>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <mat-grid-list cols="4" gutterSize="16px" [@scrollAnimation]="currentIndex">
+            <mat-grid-tile *ngFor="let feature of features; let i = index">
+                <div class="feature-container">
+                    <img [src]="feature.image" alt="{{ feature.name }}" class="feature-image">
+                    <p>{{ feature.name }}</p>
+                </div>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">
+        <div class="avatar"></div>
+        <p>"Babble Chat has changed the way I communicate with my friends. It's fast, secure, and easy to use!"</p>
+        <span>- John Doe</span>
+    </div>
+    <div class="testimonial">
+        <div class="avatar"></div>
+        <p>"I love the group chat feature on Babble Chat. It's perfect for staying connected with my team."</p>
+        <span>- Jane Smith</span>
+    </div>
+</div>

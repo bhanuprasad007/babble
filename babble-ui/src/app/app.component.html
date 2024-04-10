@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="content">
+        <header>
+            <mat-toolbar color="primary">
+                <div class="toolbar-content">
+                    <div class="logo" routerLink="landing">
+                        <span>Babble Chat</span>
+                    </div>
+                    <div class="buttons">
+                        <div>
+                            <button mat-button routerLink="/help">Help</button>
+                        </div>
+                        <div>
+                            <button mat-button routerLink="/about">About</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar>
+        </header>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+    <footer>
+        <mat-card class="footer-card" color="accent">
+            <mat-card-content>
+                <div class="footer-content">
+                    <div>&copy; 2024 Babble Chat. All rights reserved.</div>
+                    <div class="links">
+                        <a routerLink="/about">About</a>
+                        <a routerLink="/contact">Contact</a>
+                        <a routerLink="/faq">FAQs</a>
+                        <a routerLink="/privacy-policy">Privacy Policy</a>
+                        <a routerLink="/terms-of-service">Terms of Service</a>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </footer>
+</div>
+
+<div *ngIf="isLoading$ | async" class="loading-overlay">
+    <mat-spinner diameter="70"></mat-spinner>
+</div>
