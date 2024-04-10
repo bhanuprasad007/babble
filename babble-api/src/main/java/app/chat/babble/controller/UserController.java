@@ -1,6 +1,7 @@
 package app.chat.babble.controller;
 
 import app.chat.babble.model.User;
+import app.chat.babble.model.UserLoginResponse;
 import app.chat.babble.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,9 +36,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User loginUser) {
+    public ResponseEntity<UserLoginResponse> login(@RequestBody User loginUser) {
         String token = userService.login(loginUser.getUsername(), loginUser.getPassword());
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok(new UserLoginResponse(userService.getLoggedInUser(), token));
     }
 
     @DeleteMapping("/{userId}")
